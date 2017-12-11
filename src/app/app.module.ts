@@ -1,18 +1,25 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { AppComponent }   from './app.component';
+//import {empListComponent} from './employeeList.component';
+//import {empDetailComponent} from './employeeDetails.component';
+import {HttpModule}from '@angular/http';
+
+import {FormsModule} from '@angular/forms';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
-import { AppComponent } from './app.component';
+// noinspection TypeScriptCheckImport
+//import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+
+
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports:      [ BrowserModule,HttpModule,FormsModule],
+  declarations: [ AppComponent],
+  bootstrap:    [ AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
